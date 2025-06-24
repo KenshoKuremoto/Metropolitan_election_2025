@@ -12,9 +12,10 @@
       text-align: center;
       margin-bottom: 20px;
     }
-    .description {
+    p.description {
+      text-align: center;
       max-width: 800px;
-      margin: 0 auto 60px auto;
+      margin: 0 auto 40px auto;
       line-height: 1.6;
     }
     .chart-container {
@@ -29,45 +30,72 @@
 </head>
 <body>
 
-<!-- 先頭: 都議会構成 -->
-<div class="flourish-embed flourish-parliament" data-src="visualisation/23925508">
-  <script src="https://public.flourish.studio/resources/embed.js"></script>
-  <noscript>
-    <img src="https://public.flourish.studio/visualisation/23925508/thumbnail" width="100%" alt="parliament visualization" />
-  </noscript>
-</div>
-
 <h1>都議選2025 政党別 得票率マップ</h1>
 
-<div class="description">
-  <p>
-    2025年の都議選について、注目政党の得票率について可視化しました（島嶼部は入っていません）。全てのマップにおいて得票率70%を上限としているので、色の違いで各党の得票率（勢い）を表しているつもりです。あくまで仮です。
-  </p>
+<p class="description">
+  2025年の都議選について、注目政党の得票率について可視化しました（島嶼部は入っていません）。
+  全てのマップにおいて得票率70%を上限としているので、色の違いで各党の得票率（勢い）を表しているつもりです。
+  あくまで仮です。
+</p>
+
+<!-- 都議会構成図 -->
+<div class="chart-container">
+  <h2>都議会構成</h2>
+  <div class="flourish-embed flourish-parliament" data-src="visualisation/23925508">
+    <script src="https://public.flourish.studio/resources/embed.js"></script>
+    <noscript>
+      <img src="https://public.flourish.studio/visualisation/23925508/thumbnail" width="100%" alt="parliament visualization" />
+    </noscript>
+  </div>
 </div>
 
-<!-- ここに各政党のマップiframeが続く -->
-
-<!-- 末尾: れいわ新選組の得票率 -->
+<!-- 各政党マップ -->
 <div class="chart-container">
-  <h2>れいわ新選組の得票率</h2>
-  <iframe title="れいわ新選組の得票率（都議選） " aria-label="Map" id="datawrapper-chart-aEDxD" src="https://datawrapper.dwcdn.net/aEDxD/1/" scrolling="no" frameborder="0" height="445" data-external="1"></iframe>
+  <h2>都民ファースト</h2>
+  <iframe title="都民ファーストの得票率（都議選）" aria-label="Map" id="datawrapper-chart-gXIaN" src="https://datawrapper.dwcdn.net/gXIaN/2/" scrolling="no" frameborder="0" height="445" data-external="1"></iframe>
+</div>
+
+<div class="chart-container">
+  <h2>自民党</h2>
+  <iframe title="自民党の得票率（都議選）" aria-label="Map" id="datawrapper-chart-zRiVu" src="https://datawrapper.dwcdn.net/zRiVu/2/" scrolling="no" frameborder="0" height="445" data-external="1"></iframe>
+</div>
+
+<div class="chart-container">
+  <h2>公明党</h2>
+  <iframe title="公明党の得票率（都議選）" aria-label="Map" id="datawrapper-chart-xnKJa" src="https://datawrapper.dwcdn.net/xnKJa/3/" scrolling="no" frameborder="0" height="445" data-external="1"></iframe>
+</div>
+
+<div class="chart-container">
+  <h2>立憲民主党</h2>
+  <iframe title="立憲民主党の得票率（都議選）" aria-label="Map" id="datawrapper-chart-LkqW5" src="https://datawrapper.dwcdn.net/LkqW5/2/" scrolling="no" frameborder="0" height="445" data-external="1"></iframe>
+</div>
+
+<div class="chart-container">
+  <h2>国民民主党</h2>
+  <iframe title="国民民主党の得票率（都議選）" aria-label="Map" id="datawrapper-chart-LzswL" src="https://datawrapper.dwcdn.net/LzswL/3/" scrolling="no" frameborder="0" height="445" data-external="1"></iframe>
+</div>
+
+<!-- れいわ新選組 -->
+<div class="chart-container">
+  <h2>れいわ新選組</h2>
+  <iframe title="れいわ新選組の得票率（都議選）" aria-label="Map" id="datawrapper-chart-aEDxD" src="https://datawrapper.dwcdn.net/aEDxD/1/" scrolling="no" frameborder="0" height="445" data-external="1"></iframe>
 </div>
 
 <script type="text/javascript">
-  !function(){
+  (function() {
     "use strict";
-    window.addEventListener("message",function(a){
-      if(void 0!==a.data["datawrapper-height"]){
-        var e=document.querySelectorAll("iframe");
-        for(var t in a.data["datawrapper-height"])
-          for(var r,i=0;r=e[i];i++)
-            if(r.contentWindow===a.source){
-              var d=a.data["datawrapper-height"][t]+"px";
-              r.style.height=d
+    window.addEventListener("message", function(a) {
+      if (void 0 !== a.data["datawrapper-height"]) {
+        var e = document.querySelectorAll("iframe");
+        for (var t in a.data["datawrapper-height"])
+          for (var r, i = 0; r = e[i]; i++)
+            if (r.contentWindow === a.source) {
+              var d = a.data["datawrapper-height"][t] + "px";
+              r.style.height = d;
             }
       }
-    })
-  }();
+    });
+  })();
 </script>
 
 </body>
